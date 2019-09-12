@@ -28,7 +28,7 @@
 				<configuration>
 				<cloudHubDeployment>
 				<uri>https://anypoint.mulesoft.com</uri>
-					<deploymentType>arm</deploymentType>
+					
 					<username>harshanand1</username>
 					<password>B1gM0ney!</password>
 					<target>local</target>
