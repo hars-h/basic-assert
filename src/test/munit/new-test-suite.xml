@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="new-test-suite.xml" />
+	<munit:test name="new-test-suite-basic-assertFlowTest" description="Test" doc:id="d540e227-3115-4062-b3bb-ba98684f0dbf" >
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to basic-assertFlow" doc:id="58d80be6-728b-4012-b87d-e05f66312e32" name="basic-assertFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="8e68ea97-1b36-46a7-8d3d-127b4ae68eb0" expression="#[payload]" is="#[MunitTools::equalTo('This is not a test Variable')]" message="Payload Verified"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

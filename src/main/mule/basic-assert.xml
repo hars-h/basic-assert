@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="02a69f4b-ff7a-4c74-bd8c-6ae18a85f038" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="basic-assertFlow" doc:id="168dd606-b215-4c80-a4a3-83f5a0513fbc" >
+		<http:listener doc:name="Listener" doc:id="5de1a656-81a9-4c84-8a9a-8673619650d1" config-ref="HTTP_Listener_config" path="/assert"/>
+		<set-variable value='#["This is a test Variable"]' doc:name="Set Variable" doc:id="65917a84-3bc5-4559-bf57-154b29f85a8b" variableName="test"/>
+		<set-payload value="#[vars.test]" doc:name="Set Payload" doc:id="9e313067-ceed-494c-9ef3-148f0bf4cb69" />
+	</flow>
+</mule>
