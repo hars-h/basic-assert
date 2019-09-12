@@ -24,26 +24,6 @@
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-				<cloudHubDeployment>
-				<uri>https://anypoint.mulesoft.com</uri>
-					
-					<username>harshanand1</username>
-					<password>B1gM0ney!</password>
-					<target>local</target>
-					<targetType>server</targetType>
-					<environment>Sandbox</environment>
-				</cloudHubDeployment></configuration>
-				<executions>
-				<execution>
-				<id>deploy</id>
-				<phase>deploy</phase>
-				<goals>
-				<goal>deploy</goal></goals>
-				</execution>
-				
-				</executions>
 			</plugin>
 			<plugin>
     <groupId>org.apache.maven.plugins</groupId>
