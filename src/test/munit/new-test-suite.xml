@@ -13,7 +13,7 @@
 			<flow-ref doc:name="Flow-ref to basic-assertFlow" doc:id="58d80be6-728b-4012-b87d-e05f66312e32" name="basic-assertFlow"/>
 		</munit:execution>
 		<munit:validation >
-			<munit-tools:assert-that doc:name="Assert that" doc:id="8e68ea97-1b36-46a7-8d3d-127b4ae68eb0" expression="#[payload]" is="#[MunitTools::equalTo('This is not a test Variable')]" message="Payload Verified"/>
+			<munit-tools:assert-that doc:name="Assert that" doc:id="8e68ea97-1b36-46a7-8d3d-127b4ae68eb0" expression="#[payload]" is="#[MunitTools::equalTo('This is a test Variable')]" message="Payload Verified"/>
 		</munit:validation>
 	</munit:test>
 
