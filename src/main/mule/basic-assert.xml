@@ -10,6 +10,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="basic-assertFlow" doc:id="168dd606-b215-4c80-a4a3-83f5a0513fbc" >
 		<http:listener doc:name="Listener" doc:id="5de1a656-81a9-4c84-8a9a-8673619650d1" config-ref="HTTP_Listener_config" path="/assert"/>
 		<set-variable value='#["This is a test Variable"]' doc:name="Set Variable" doc:id="65917a84-3bc5-4559-bf57-154b29f85a8b" variableName="test"/>
-		<set-payload value="#[vars.test]" doc:name="Set Payload" doc:id="9e313067-ceed-494c-9ef3-148f0bf4cb69" />
+		<set-variable value="#[786 as Number]" doc:name="Set Variable" doc:id="5029ad53-a254-4b19-9f28-f99246372abe" variableName="id"/>
+		<set-payload doc:name="Set Payload" doc:id="9e313067-ceed-494c-9ef3-148f0bf4cb69" value="#[vars.id as Number + 1000]"/>
+		<set-variable value="#[payload as Number]" doc:name="Set Variable" doc:id="4227398b-52f9-4f0d-b63e-7df690ce653a" variableName="id"/>
 	</flow>
 </mule>

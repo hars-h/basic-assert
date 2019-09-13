@@ -9,6 +9,16 @@
 		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
 	<munit:config name="new-test-suite.xml" />
 	<munit:test name="new-test-suite-basic-assertFlowTest" description="Test" doc:id="d540e227-3115-4062-b3bb-ba98684f0dbf" >
+		<munit:behavior >
+			<munit-tools:spy doc:name="Spy" doc:id="4fc0e7c2-7f09-4787-82b9-3958a7fe9a2b" processor="http:listener">
+				<munit-tools:before-call >
+					<munit-tools:assert-that doc:name="Assert that" doc:id="ac862c98-0bb2-4c71-921b-ac9c7acc7820" expression="#[vars.test]" is="#[MunitTools::equalTo(786 as Number)]" message="SPY Assert  Before Call"/>
+				</munit-tools:before-call>
+				<munit-tools:after-call >
+					<munit-tools:assert-that doc:name="Assert that" doc:id="1e5355c2-2421-4984-91d9-ecd0f9044886" expression="#[payload]" is="#[MunitTools::equalTo(1000 as Number)]" message="SPY Assert  After Call"/>
+				</munit-tools:after-call>
+			</munit-tools:spy>
+		</munit:behavior>
 		<munit:execution >
 			<flow-ref doc:name="Flow-ref to basic-assertFlow" doc:id="58d80be6-728b-4012-b87d-e05f66312e32" name="basic-assertFlow"/>
 		</munit:execution>
